@@ -1,0 +1,19 @@
+
+img {
+    width: 20px;
+    margin-top:0px;
+    
+}
+
+li ul { display: none; }
+
+
+li ul { padding-left: 4em;  list-style:none;}
+li ul li {line-height:35px;}
+li ul li ul { padding-left: .5em; } 
+
+#dashboard
+{
+margin-left:7px;
+}
+

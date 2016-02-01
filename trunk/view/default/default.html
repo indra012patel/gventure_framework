@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="author" content="" />
+<meta name="Robots" content="index,follow" />
+<link rel="stylesheet" href="images/CoolWater.css" type="text/css" />
+<link type="text/css" href="css/jquery.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-cookie.js"></script>
+<script type="text/javascript" src="js/jquery-ui-custom.min.js"></script>
+<script type="text/javascript" src="js/jquery-validate.js"></script>
+<script type="text/javascript" src="js/tooltip.js"></script>
+<title>DEFAULT</title>
+</head>
+<body>
+{block name=content}
+	{gventure_gridview name=data cellspacing=0 cellpadding=0 label={$label}}
+		{gridview_header header=$header}
+		{gridview_data field=$field counter=$counter limit=$limit data=$data session=$session module=$module keyfield=$keyfield editmethod=edit deletemethod=delete datarows=$row datacols=$datacols altrowcss=alt}
+		{gridview_paging session=$session module=$module action=$action data=$data datarows=$datarows datacols=$datacols page=$page limit=$limit type=numeric}
+	{/gventure_gridview}
+{/block}
+</body>
+</html>

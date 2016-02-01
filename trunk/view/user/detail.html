@@ -1,0 +1,40 @@
+{extends file="view/{$basetpl}"}
+{block name=content}
+	<div class="row-fluid">			
+		<div class="box span12">
+			{Form name="form" label="View User" enctype=true session=$session module={encode string=$module} action={encode string="user"} key={encode string=$keyfield}}
+			<div class="box-content">
+				{input name="key" type="hidden" value={encode string=$data.id}}
+				{input label="User Name" name="username" type="label" readonly=true value=$data.username}
+				{input label="Password" name="password" type="label" readonly=true value=$data.password}
+				{input label="Balance" name="balance" readonly=true type="label"  value=$data.balance}
+				{input label="Unicode" name="unicode" readonly=true type="label"  value=$data.unicode}
+				{*{input label="Email" name="email" readonly=true type="label" value=$data.email}
+				{input label="Website" name="website" readonly=true type="label"  value=$data.website}*}
+			</div>
+			{if $sess_data.level neq 6}
+			<div class="box-content">
+				<table class="table table-bordered table-striped table-condensed">
+					<thead>
+						<tr>
+							<th>Tariff</th>
+							<th>Tariff Type</th>
+							<th>Prefix</th>
+						</tr>
+					</thead>   
+					<tbody>
+					{foreach from=$userData item=foo}
+						<tr>
+							<td>{URL session={$session} roles=${ROLES} module="rate" action="list" hiddenkey={$foo.idtariff} label="<i class=\"fa  fa-money\"></i><span class=\"hidden-tablet\"> {$foo.tariffname}</span>"}</td>
+							<td class="center">{$foo.tariff_type}</td>
+							<td class="center">{$foo.prefix}</td>
+						</tr>
+					{/foreach}
+					</tbody>
+				 </table>  
+			</div>
+			{/if}
+			{/Form}
+		</div>
+	</div>
+{/block}

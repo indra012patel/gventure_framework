@@ -1,0 +1,51 @@
+{extends file="view/{$basetpl}"}
+{block name="js"}
+{gventure_jquery name="data"}
+        {jquerydelete id="view" message="Do you want to block this User"}
+		{jquerydelete id="view1" message="Do you want to unblock this User"}
+{/gventure_jquery}
+
+{gventure_js name="prev_form"}
+		{gventure_valid name="amount" type="text" rule="required" length=1}
+{/gventure_js}
+{/block}
+{block name="submenu"}
+	<ul class="breadcrumb">
+		<li>{URL session={$session} roles=${ROLES} module="user" action="add" label="<i class=\"fa fa-plus-square\"></i>&nbspAdd Reseller"}</li>
+		<li>{URL session={$session} roles=${ROLES} module="user" action="list" label="<i class=\"fa fa-user\"></i>&nbspList Reseller"}</li>
+	</ul>
+{/block}
+{block name=content}
+	<div class="row-fluid sortable">		
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2><i class="halflings-icon user"></i><span class="break"></span>Reseller List</h2>
+				<div class="box-icon">
+					<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+			{gventure_gridview name=data css="table table-striped table-bordered bootstrap-datatable datatable"}
+				{gridview_header header=$header}
+				{gridview_ACLdata field=$field counter=$counter limit=$limit data=$data session=$session module=$module keyfield=$keyfield editmethod=$editmethod deletemethod=$deletemethod datarows=$row datacols=$datacols altrowcss=alt roles=$ROLES addbutton=savepayment popup="true" flag=block}
+			{/gventure_gridview}
+			</div>
+		</div>
+	</div>
+<div class="modal fade" id="myModal" style="display:none;">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h3>Add Payment</h3>
+	</div>
+	<div class="modal-body">
+			{Form name="prev_form" label="" enctype=true session=$session module={encode string=$module} action={encode string="savepayment"} key={encode string=$key}}
+			<div class="box-content">
+				{input label="Amount" name="amount" type="text"}
+				{input label="Description" name="desc" type="textarea"}
+				{input name="button1" type="submit" value="Add Payment"}
+			</div>
+			{/Form}
+	</div>
+</div>
+{/block}

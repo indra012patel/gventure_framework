@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>VoxGlide</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="stylesheet" href="css/bootstrap.css" media="all" />
+        <link rel="stylesheet" href="css/font-awesome.css" media="all" />
+        <link rel="stylesheet" href="css/superfish.css" media="all" />
+        <link rel="stylesheet" href="css/owl.carousel.css" media="all" />
+        <link rel="stylesheet" href="css/owl.theme.css" media="all" />
+        <link rel="stylesheet" href="css/jquery.navgoco.css"/>
+        <link rel="stylesheet" href="css/colorbox.css" media="all" />
+        <link rel="stylesheet" href="css/animate.css" media="all" />
+        <link rel="stylesheet" href="css/fractionslider.css" media="all" />
+        <link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.navgoco.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/jquery.colorbox.js"></script>
+		<script src="js/masonry.pkgd.js"></script>
+		<script src="js/imagesloaded.js"></script>
+		<script src="js/jquery.imagesloaded.js"></script>
+		<script src="js/jquery.wookmark.js"></script>
+		<script src="js/jquery.fractionslider.js"></script>
+		<script src="js/jquery.wow.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+        <script src="js/modernizr.custom.js"></script>
+
+
+        <!--[if lt IE 9]>
+            <link rel="stylesheet" href="css/ie.css" type="text/css" media="all" />
+        <![endif]-->
+
+        <!--[if IE 9]>
+            <link rel="stylesheet" href="css/ie9.css" type="text/css" media="all" />
+        <![endif]-->
+
+        <!-- Le fav and touch icons -->
+        <link rel="shortcut icon" href="img/favicon.html">
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    </head>
+
+    <body class="kopa-home-parallax">
+		<header class="kopa-page-header header-custom">
+
+                    <div class="kopa-header-top">
+
+                <div class="wrapper clearfix">
+
+                    <div class="hotline-box pull-left">
+                        <h6 class="">Hotline:  24x7 Network Support<a href="callto:+1 510-931-4663">  +1 510-931-4663</a></h6>
+                        <span class="triangle-wrapper"></span>
+                        <span class="triangle"></span>
+                        <div class="kopa-border-bottom"></div>
+                    </div>
+                    <!-- hotlinebox -->
+
+                    <div class="ss-box pull-right clearfix">
+
+                        
+                        <!-- social-links -->
+
+                        <div class="search-box pull-right clearfix">
+						<div class="control-group">
+    
+    <div class="controls form-inline">
+                            <form class="form-signin" name="login" action="index.php" method="post">
+								<input type="hidden" id="module" name="module" value="{encode string=login}"/>
+								<input type="hidden" id="action" name="action" value="{encode string=authen}"/>
+								<input type="text" id="username" class="input-small" name="username" placeholder="User name" required>
+								<input type="password" id="password" class="input-small " name="password" placeholder="Password" required>
+								<button class="btn btn-primary" type="submit" id="loginnow" name="loginnow" value="Login"/>Login</button>
+       
+							</form>
+							</div>
+							</div>
+                            <!-- login-form -->
+                        </div>
+						
+						
+                        <!--search-box-->
+
+                    </div>
+                    <!-- ss-box -->
+
+                    <div class="left-bg-color">
+                        <div class="kopa-border-bottom"></div>
+                    </div>
+
+                </div>
+                <!-- wrapper -->
+
+            </div>
+        <!-- kopa-header-top -->
+
+        <div class="kopa-header-bottom ">
+
+            <div class="wrapper clearfix">
+
+                <div class="left-color-bg">
+                    <div class="left-color-bg-outer"></div>
+                    <div class="triangle"></div>
+                </div>
+
+                <div class="logo-box pull-left">
+                    <a href="index-2.html"><img src="images/logo.png" alt="" /></a>
+                </div>
+                <!-- logo-box -->
+
+                <nav class="main-nav pull-right">
+
+                   <ul class="main-menu clearfix">
+                                <li><a href="index.html">Home</a></li>
+			{if {$action} eq 'about'}
+                            <li class="current-menu-item">
+                            	<a href="about.html">About</a>
+                            </li>
+			{else}
+				<li><a href="about.html">About</a></li>
+			{/if}
+			{if {$action} eq 'rates'}
+                            <li class="current-menu-item">
+                            	<a href="rates.html">Rates</a>
+                            </li>
+			{else}
+				<li><a href="rates.html">Rates</a></li>
+			{/if}
+			{if {$action} eq 'contact'}
+                            <li class="current-menu-item">
+                            	<a href="contact.html">Contact</a>
+                            </li>
+			{else}
+				<li><a href="contact.html">Contact</a></li>
+			{/if}
+			{if {$action} eq 'register'}
+                            <li class="current-menu-item">
+                            	<a href="register.html">Register</a>
+                            </li>
+			{else}
+				<li><a href="register.html">Register</a></li>
+			{/if}
+                       </ul>
+                    <!-- main-menu -->
+
+                </nav>
+                <!-- main-nav -->
+
+                <nav class="main-nav-mobile clearfix">
+                    <a class="pull"><span class="fa fa-align-justify"></span></a>
+                    <ul class="main-menu-mobile clearfix">
+                        <li class="current-menu-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Page</a>
+                            <ul class="sub-menu">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li>
+                            <a href="#">Single</a>
+                            <ul class="sub-menu">
+                                <li><a href="single.html">Single Post</a></li>
+                                <li><a href="single-portfolio.html">Single Portfolio</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="home-shop.html">Shop</a></li>
+                    </ul>
+                </nav>
+            <!--/main-menu-mobile-->
+
+            </div>
+            <!-- wrapper -->
+
+        </div>
+        <!-- kopa-header-bottom -->
+
+        <div class="kopa-header-top-2">
+
+            <div class="wrapper clearfix">
+
+            
+                <ul class="social-links pull-left clearfix wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                    <li><a href="#" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-rss"></a></li>
+                    <li><a href="#" class="fa fa-google-plus"></a></li>
+                    <li><a href="#" class="fa fa-pinterest"></a></li>
+                    <li><a href="#" class="fa fa-dribbble"></a></li>
+                </ul>
+                <!-- social-links -->
+
+                <div class="search-box pull-right clearfix wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="0.6s">
+                    <form action="#" class="search-form clearfix" method="get">
+                        <input type="text" onBlur="if (this.value == '')
+                            this.value = this.defaultValue;" onFocus="if (this.value == this.defaultValue)
+                            this.value = '';" value="Search this site" name="s" class="search-text">
+                        <button type="submit" class="search-submit"><span class="fa fa-search"></span>
+                    </button>
+                    </form>
+                    <!-- search-form -->
+                </div>
+                <!--search-box-->
+
+    
+            </div>
+            <!-- wrapper -->
+
+        </div>
+        <!-- kopa-header-top-2 -->
+
+    </header>
+        <!-- kopa-page-header -->
+        {block name="content"}
+		
+		{/block}
+        <!-- main-content -->
+
+        <section class="kopa-area-3">
+
+            <div class="wrapper">
+
+                <div class="left-area">
+                    <div class="widget kopa-social-link-widget">
+                        <span>Stay in touch</span>
+                            <ul class="social-links pull-left clearfix">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-rss"></a></li>
+                            <li><a href="#" class="fa fa-pinterest"></a></li>
+                            <li><a href="#" class="fa fa-dribbble"></a></li>
+                        </ul>
+                    </div>
+                    <!-- kopa-social-link-widget --> 
+                </div>
+                <!-- left-area --> 
+
+                <div class="right-area">
+                    <div class="widget kopa-newsletter-widget">
+                        <span class="news-icon fa fa-envelope"></span>
+                        <div class="media-body">
+                            <p>Newsletter Signup</p>
+                            <form class="newsletter-form clearfix" method="post" action="#">
+                                <p class="input-email clearfix">
+                                    <input type="text" size="40" class="email" value="" name="email">
+                                    <input type="submit" class="submit" value="Subscribe">
+                                </p>                    
+                            </form>
+                            <div id="newsletter-response"></div>
+                        </div>
+                    </div>
+                    <!-- kopa-newsletter-widget -->
+                </div>
+                <!-- right-area --> 
+
+            </div>
+
+        </section>
+        <!-- end .kopa-area-3 -->
+
+        <div id="bottom-sidebar">
+
+            <div class="wrapper">
+
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-4 col-xs-4 wow fadeInUp" data-wow-duration="0.2s" data-wow-delay="0.2s">
+
+                        <div class="widget kopa-contact-widget">
+                            <h3 class="widget-title">Contact-info</h3>
+                            <address>
+                                <p><i class="fa fa-map-marker"></i><span class="media-body">Room 1614, 16/F, Wealth Commercial Centre,<br>
+                                <i>&nbsp;&nbsp;</i><i>&nbsp;&nbsp;</i><i>&nbsp;&nbsp;</i><i>&nbsp;&nbsp;</i><i>&nbsp;&nbsp;</i>48 Kwong Wa Street, Mongkok, Kowloon, Hong Kong</span></p>
+                                <p><i class="fa fa-phone"></i>+1 510-931-4663</p>
+                                <p><i class="fa fa-envelope-o"></i><a href="mailto:mail@compname.com">sales.gventurecommunication.com</a></p>
+                            </address>
+                        </div>
+                        <!-- widget -->
+
+                    </div>
+                    <!-- col-md-4 -->
+
+                    <div class="col-md-2 col-sm-2 col-xs-2 wow fadeInUp" data-wow-duration="0.2s" data-wow-delay="0.2s">
+
+                        <div class="widget widget_text">
+                            <h3 class="widget-title">Quick links</h3>
+                            <div class="textwidget">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+								{if {$action} eq 'about'}
+									<li class="current-menu-item">
+										<a href="about.html">About</a>
+									</li>
+								{else}
+									<li><a href="about.html">About</a></li>
+								{/if}
+								{if {$action} eq 'rates'}
+									<li class="current-menu-item">
+										<a href="rates.html">Rates</a>
+									</li>
+								{else}
+									<li><a href="rates.html">Rates</a></li>
+								{/if}
+								{if {$action} eq 'contact'}
+									<li class="current-menu-item">
+										<a href="contact.html">Contact</a>
+									</li>
+								{else}
+									<li><a href="contact.html">Contact</a></li>
+								{/if}
+								{if {$action} eq 'register'}
+									<li class="current-menu-item">
+										<a href="register.html">Register</a>
+									</li>
+								{else}
+									<li><a href="register.html">Register</a></li>
+								{/if}
+								</ul>
+                            </div>
+                        </div>
+                        <!-- widget -->
+
+                    </div>
+                   <!--  -->
+
+                </div>
+                <!-- row -->
+
+            </div>
+            <!-- wrapper -->
+
+        </div>
+        <!-- bottom-sidebar -->
+
+        <footer id="kopa-page-footer">
+            <div class="wrapper clearfix">
+                <p id="copyright" class="pull-left wow fadeInLeft" data-wow-duration="0.2s" data-wow-delay="0.2s">&copy; 2014 All rights reserved.  Theme by <a href="#">Gventure.net</a></p>
+
+                <nav id="footer-nav" class="pull-right wow fadeInRight" data-wow-duration="0.2s" data-wow-delay="0.2s">
+                    <ul id="footer-menu" class="clearfix">
+                        <li><a href="index.html">Home</a></li>
+								{if {$action} eq 'about'}
+									<li class="current-menu-item">
+										<a href="about.html">About</a>
+									</li>
+								{else}
+									<li><a href="about.html">About</a></li>
+								{/if}
+								{if {$action} eq 'rates'}
+									<li class="current-menu-item">
+										<a href="rates.html">Rates</a>
+									</li>
+								{else}
+									<li><a href="rates.html">Rates</a></li>
+								{/if}
+								{if {$action} eq 'contact'}
+									<li class="current-menu-item">
+										<a href="contact.html">Contact</a>
+									</li>
+								{else}
+									<li><a href="contact.html">Contact</a></li>
+								{/if}
+								{if {$action} eq 'register'}
+									<li class="current-menu-item">
+										<a href="register.html">Register</a>
+									</li>
+								{else}
+									<li><a href="register.html">Register</a></li>
+								{/if}
+                    </ul>
+                </nav>
+                <!-- footer-nav -->
+            </div>
+            <!-- wrapper -->
+
+            <p id="back-top">
+                <a href="#top"></a>
+            </p>
+        </footer>
+        <!-- kopa-page-footer -->
+
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/custom.js" charset="utf-8"></script>
+
+    </body>
+</html>

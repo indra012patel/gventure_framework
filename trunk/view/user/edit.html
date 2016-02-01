@@ -1,0 +1,29 @@
+{extends file="view/{$basetpl}"}
+{block name="js"}
+	{gventure_js name="form"}
+	   {gventure_valid name="username" type="text" rule="required" length=2}
+	   {gventure_valid name="password" type="text" rule="required" length=2}
+	{/gventure_js} 
+{/block}
+{block name=content}
+	<div class="row-fluid">			
+		<div class="box span12">
+			{Form name="form" label="Update User" enctype=true session=$session module={encode string=$module} action={encode string=$formaction} key={encode string=$keyfield}}
+			<div class="box-content">
+				{input label="Tariff" name="oldtariff" type="hidden" value=$data.idtariff}
+				{input label="User Name" name="username" type="text" value=$data.username}
+				{input label="Password" name="password" type="text" value=$data.password}
+				{input label="Tariff" name="tariff" option=$opttariff type="select" value=$data.idtariff}
+				{if $userlevel eq 6}
+					{if $data.apply_setting eq 1}
+						{input label="Apply Setting" name="apply_setting" type="checkbox"}
+					{else}
+						{input label="Apply Setting" name="apply_setting" type="checkbox" checked="true"}
+					{/if}	
+				{/if}
+				{input name="button1" type="submit" value="update"}
+			</div>
+			{/Form}
+		</div>
+	</div>
+{/block}

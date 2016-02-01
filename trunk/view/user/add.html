@@ -1,0 +1,61 @@
+{extends file="view/{$basetpl}"}
+{block name="js"}
+	<script>
+	$(document).ready(function(){
+	var state;
+		$(".popup").click(function()  {
+			$('#myModal').bPopup({
+				easing: 'easeOutBack',
+			});
+			state=$('#myModal').bPopup();
+		});
+		$('.show').click(function(){
+				var bal=$('#amount').val();
+				$('#bal').val(bal);
+				state.close();
+				
+		});
+	}); 
+</script>
+	{gventure_js name="form"}
+	   {gventure_valid name="username" label="Username" type="text" rule="required" length=2}
+	   {gventure_valid name="password" label="Password" type="text" rule="required" length=4}
+	   {gventure_valid name="tariff" label="Tariff" type="select" rule="required" length=2}
+	{/gventure_js} 
+{/block}
+{block name="submenu"}
+	<ul class="breadcrumb">
+		<li>{URL session={$session} roles=${ROLES} module="user" action="add" label="<i class=\"fa fa-plus-square\"></i>Add Reseller"}</li>
+		<li>{URL session={$session} roles=${ROLES} module="user" action="list" label="<i class=\"fa fa-sitemap\"></i>List Reseller"}</li>
+	</ul>
+{/block}
+{block name="content"}
+	<div class="row-fluid">			
+		<div class="box span12">
+			{Form name="form" label="Add Reseller" session=$session module={encode string=$module} action={encode string=$formaction}}
+			<div class="box-content">
+				{input label="User Name" name="username" type="text"}
+				{input label="Password" name="password" type="text"}
+				{input label="Opening Balance" name="bal" type="number" value=0 min="0" readonly=false}<!-- <a href="#" class="popup" >Add Bal</a><br/> -->
+				{input label="Tariff" name="tariff" type="select" option=$opttariff}
+				{if $userlevel eq 6}
+					{input label="Apply Setting" name="apply" type="checkbox" value="0"}
+				{/if}
+				{input name="button1" type="submit" value="add"}
+			</div>
+			{/Form}
+		</div>
+	</div>
+<div class="modal fade" id="myModal" style="display:none;">
+	<div class="row-fluid">	
+		<div class="box span12">
+			{Form name="prev_form" label="Add Payment" enctype=true session=$session module={encode string=$module} action={encode string="savepayment"} key={encode string=$key}}
+				<div class="box-content">
+					{input label="Amount" name="amount" type="text" value="0"}
+					<a href="#" class="popup show" >Add</a>
+				</div>
+			{/Form}
+		</div>
+	</div>
+</div>
+{/block}

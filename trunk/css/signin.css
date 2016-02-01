@@ -1,0 +1,82 @@
+body {
+  font-family:arial;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background:url('../images/bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #fff;
+  background-position:center;
+  
+}
+.form{
+ margin: 8% auto;
+ width: 700px;
+}
+.form .form-heading
+ {
+  margin-bottom: 10px;
+}
+.form .form-input {
+  font-size: 16px;
+  height: auto;
+  padding-left:35px;
+  width:250px;
+  background:#fff;
+  opacity:0.9;
+}
+.form input {
+  margin-bottom: 10px;
+  border-radius: 2px;
+  border:unset;
+  height:35px !important;
+  color:#a7a7a8;
+}
+.form input::-moz-placeholder {  
+      color: #000;  
+}  
+.form input::-webkit-input-placeholder {  
+      color: #000;  
+}  
+.form input::-ms-input-placeholder {  
+      color: #000;  
+}  
+.form .button {
+  font-family:sans-serif;
+  font-size: 15px;
+  height: 35px;
+  width:130px;
+  border-radius:4px;
+  border:0;
+  color:#fff;
+  background:#0065a4;
+  margin-left: 40%;
+}
+.round
+{
+ width:100px;
+ height:100px;
+ border-radius:100px;
+ background:#fff;
+ top:90px;
+ left:625px;
+ position:absolute;
+}
+.button-group
+{
+margin-top:50px;
+margin-left:42px;
+width:auto;
+float:left;
+}
+.icon
+{
+position:absolute;
+padding-top:3px;
+padding-left:8px;
+font-size:25px;
+z-index:1000;
+opacity:0.32;
+}
