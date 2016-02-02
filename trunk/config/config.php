@@ -2,14 +2,14 @@
 // +----------------------------------------------------------------------+
 // | GV Framework                                                         |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 2012-2015 G Venture Technology Pvt. Ltd.               |
+// | Copyright (c) 2012-2016 G Venture Technology Pvt. Ltd.               |
 // +----------------------------------------------------------------------+
 
 	if(SERVER=="WINNT"){
 		define('APP_DIR', str_replace('\\','/',getcwd())."/");
 		//define('APP_DIR', 'C:/wamp/www/gvframe/ver1/cdr/trunk/');
 		ini_set('include_path', ini_get('include_path') .";".APP_DIR."lib/view;".APP_DIR."lib/plugin;".APP_DIR."lib;".APP_DIR."lib/logger;".APP_DIR."config;".APP_DIR."include;".APP_DIR."feature;");
-		define("HTTP_HOST", "http://localhost/gveture_framework/trunk/");
+		define("HTTP_HOST", "http://localhost/cms/mygithub/gventure_framework/trunk/");
 	}
 	else{
 		define('APP_DIR', str_replace('\\','/',getcwd())."/");
