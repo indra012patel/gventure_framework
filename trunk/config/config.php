@@ -1,57 +1,156 @@
 <?php
 // +----------------------------------------------------------------------+
-// | GV Framework                                                         |
+// | SO Framework                                                         |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 2012-2016 G Venture Technology Pvt. Ltd.               |
+// | Copyright (c) 2012-2016                                              |
 // +----------------------------------------------------------------------+
 
-	if(SERVER=="WINNT"){
-		define('APP_DIR', str_replace('\\','/',getcwd())."/");
-		//define('APP_DIR', 'C:/wamp/www/gvframe/ver1/cdr/trunk/');
-		ini_set('include_path', ini_get('include_path') .";".APP_DIR."lib/view;".APP_DIR."lib/plugin;".APP_DIR."lib;".APP_DIR."lib/logger;".APP_DIR."config;".APP_DIR."include;".APP_DIR."feature;");
-		define("HTTP_HOST", "http://localhost/cms/mygithub/gventure_framework/trunk/");
-	}
-	else{
-		define('APP_DIR', str_replace('\\','/',getcwd())."/");
-		//define('APP_DIR', '/opt/lampp/htdocs/gvframe/trunk/');
-		ini_set('include_path', ini_get('include_path') .":".APP_DIR."lib/view:".APP_DIR."lib:".APP_DIR."lib/logger:".APP_DIR."config:".APP_DIR."include:".APP_DIR."lib/plugin:");
-			define("HTTP_HOST", "http://localhost/trunk/");
-	}
-	$timezone = "Asia/Kolkata"; 
-	
-	if(function_exists('date_default_timezone_set')) 
-		date_default_timezone_set($timezone); 
-		
-	define("VERSION", "0.1.0");
-	define("TITLE", "Voip Bussiness Directory");
-	define("THEME", "Metro");
-	ini_set('memory_limit', '100M');
-	define("UPLOAD_DIR", "upload/");
-	define("USERTYPE", "type");
-	define("Email", "support@gventure.net");
-	define("LOG4PHP_CONFIGURATION", "conf/appender.properties");
-	define("COMPANY", "2");
-	define("SOUND", "sound/");
-	define("THEME", "METRO");
-	define("EVENT", "1");
-	define("ROW", "2000");
-	define("GV_PASS_ENCODER_KEY", "GventureCallnow");
-	define("GV_URL_ENCODER_KEY", "%#GventureCallnow%#");// PLEASE DONT USE CHARACTER ":" IN ENCRYPTION KEY
-	define('SMARTY_DIR', APP_DIR.'lib/view/');
-	define('APP_TIMEOUT','3600');
-	define('DEFAULT_PAGE','login.html');
-	define('DEFAULT_TEMP','default.tpl');
-	define('SESSION_KEY','id');
-	define("TEMP_DIR","tmp/");
-	
-	include_once("dbconfig.php");
-	include_once("common.lib.php");
-	
-	//include_once("paypal_pro.inc.php");
-	//include_once("payflow.inc.php");
-	//include_once("pagination.class.php");
-	include_once("Controller.php");
-	require_once("Logger.php");
-	Logger::configure(LOG4PHP_CONFIGURATION);
-	$logger = logger::getRootlogger();
+/* 
+* host file contains the detail of the domain name which is pointed to this application
+*/
+include("host.php");
+
+/* **************************************************************************** */
+
+/* 
+* We have define memory limit up to 100 MB. You can also change it from php configuration file e.g. [.ini]  
+*/
+ini_set('memory_limit', '100M');
+
+/* **************************************************************************** */
+
+/* 
+* Your Current version of framework.
+*/
+define("VERSION", "1.0.0");
+
+/* **************************************************************************** */
+
+/* 
+* This is your default page title
+*/
+
+define("TITLE", "SO LAB");
+
+/* **************************************************************************** */
+
+/* 
+* You have to define your theme name here. It is by default Metro.
+*/
+define("THEME", "Metro");
+
+/* **************************************************************************** */
+
+/* 
+* upload is the default directory where you can save your uploaded files from application. You have to give read and write permission to this directory.
+*/
+define("UPLOAD_DIR", "upload/");
+/* **************************************************************************** */
+
+/* 
+* You must have assign an type for login user. It means you login table must have a column which define the type of user. So that you can give him permission to access and privilege.
+*/
+define("USERTYPE", "type");
+
+/* **************************************************************************** */
+
+/* 
+* You can set your email id for mailing purpose.
+*/
+define("Email", "");
+
+/* **************************************************************************** */
+
+/* 
+* Creating Logs under logs/ directory. 
+*/
+define("LOG4PHP_CONFIGURATION", "conf/appender.properties");
+/* **************************************************************************** */
+
+/* 
+* Number of rows by default is set to 2000. it is display into data table. You can use limit keywords to increase the limit while running your database query.
+*/
+define("ROW", "2000");
+
+/* **************************************************************************** */
+
+/* 
+* this is url encoder and encoder key. PLEASE DONT USE CHARACTER ":" IN ENCRYPTION KEY
+*/
+define("GV_PASS_ENCODER_KEY", "");
+define("GV_URL_ENCODER_KEY", "%#BALOS%#"); 
+
+/* **************************************************************************** */
+
+/* 
+* Smarty engine directory. 
+*/
+define('SMARTY_DIR', APP_DIR.'lib/view/');
+
+/* **************************************************************************** */
+
+/* 
+* Application default timeout is set by default to 3600 [60 minutes]
+*/
+define('APP_TIMEOUT','3600');
+
+/* **************************************************************************** */
+
+/* 
+* Default page and default temp file is define.
+*/
+define('DEFAULT_PAGE','login.html');
+define('DEFAULT_TEMP','default.tpl');
+
+/* **************************************************************************** */
+
+/* 
+* SESSION_KEY is by default set to id.
+*/
+define('SESSION_KEY','id');
+/* **************************************************************************** */
+
+/* 
+* /tmp directory must have permission for write. this directory contains mtp file of smarty template engine.
+*/
+define("TEMP_DIR","tmp/");
+
+/* **************************************************************************** */
+
+/* 
+* Custom variable witch is define in file placed in directory config/smarty.config.php 
+*/
+include_once("smarty.config.php");
+define('GV_VAR', serialize($gv_var));
+
+/* **************************************************************************** */
+
+/* 
+* Include database configuration file.	
+*/
+
+include_once("dbconfig.php");
+
+/* **************************************************************************** */
+
+/* 
+* Include common library file. The function contains this file can be access from anywhere directly. 	
+*/
+include_once("common.lib.php");
+
+/* **************************************************************************** */
+
+/* 
+* Include controller file.	
+*/
+include_once("Controller.php");
+/* **************************************************************************** */
+
+/* 
+* Include logger class to implement debug, error and fatal log feature. 
+*/
+require_once("Logger.php");
+Logger::configure(LOG4PHP_CONFIGURATION);
+$logger = logger::getRootlogger();
+/* **************************************************************************** */
 ?>
