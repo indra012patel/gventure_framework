@@ -1,4 +1,4 @@
 Options +FollowSymlinks
 RewriteEngine on
-RewriteBase /gventure_framework/trunk/
+RewriteBase /cms/mygithub/gventure_framework/trunk/
 RewriteRule (.*)\.html index.php?module=login&action=$1
